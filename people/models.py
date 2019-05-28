@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 class People(models.Model):
   name      = models.CharField(max_length = 100, null = False, blank = False)
-  email     = models.CharField(max_length = 100, null = False, blank = False)
+  email     = models.CharField(max_length = 100, null = False, blank = False, unique = True)
   country   = models.CharField(max_length = 100)
   timestamp = models.DateTimeField(auto_now_add=True)
 
