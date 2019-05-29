@@ -14,3 +14,4 @@ def get_people_list_from_json_file():
   for record in list:
     person = People(name = record[1], email = record[2], country = record[3])
     person.save()
+  return People.objects.all()
