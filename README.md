@@ -8,6 +8,7 @@ If you would like to run the project locally, Don't forget to:
     1. DB_NAME
     2. DB_USERMAME
     3. DB_PASSWORD
+    4. APP_SECRET_KEY
 - Run Migrations
 
 To access end points:
