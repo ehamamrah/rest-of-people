@@ -1,7 +1,5 @@
-import json
-from people.models import People
 from celery import shared_task
-from people import models
+import json
 
 @shared_task
 def read_json_file_details():
@@ -11,11 +9,12 @@ def read_json_file_details():
 
 @shared_task
 def get_people_list_from_json_file():
+  from people.models import People
   list = read_json_file_details()
   records = []
   for record in list:
     records += [
-      models.People(name = record[1], email = record[2], country = record[3])
+      People(name = record[1], email = record[2], country = record[3])
     ]
-  models.People.objects.bulk_create(records)
+  People.objects.bulk_create(records)
   return People.objects.all()
