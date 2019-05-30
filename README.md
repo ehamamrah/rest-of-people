@@ -9,3 +9,11 @@ If you would like to run the project locally, Don't forget to:
     2. DB_USERMAME
     3. DB_PASSWORD
 - Run Migrations
+
+To access end points:
+- Create super user
+- Send request to api token endpoint:
+    curl -X POST -d "username=SUPERUSER&password=YOURPASSWORD" http://localhost:8000/api-token/
+- Save Your Generated Token
+- Send request to ap/people endpoint:
+    curl --header 'Authorization: JWT YOUR_TOKEN’ 'http://localhost:8000/api/people/'
